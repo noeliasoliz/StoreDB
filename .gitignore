@@ -1,0 +1,24 @@
+# Carpetas de compilación y salida
+bin/
+obj/
+packages/
+_PublishedWebsites/
+
+# Archivos específicos del usuario y del IDE
+*.user
+*.suo
+*.sln.docstates
+*.cache
+*.vs/
+*.vcxproj.user
+*.vcxproj.filters.user
+*.dbmdl.layout
+*.sqldproj.user
+
+# Archivos temporales del sistema operativo
+Thumbs.db
+.DS_Store
+
+# Otros archivos o carpetas que quieras ignorar
+# Ejemplo: archivos de logs
+*.log
