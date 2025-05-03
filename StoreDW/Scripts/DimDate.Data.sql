@@ -1,4 +1,5 @@
-﻿IF NOT EXISTS(SELECT TOP(1) 1
+﻿
+IF NOT EXISTS(SELECT TOP(1) 1
               FROM [dbo].[DimDate])
  BEGIN
 	BEGIN TRAN 

@@ -9,6 +9,5 @@ Plantilla de script posterior a la implementación
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
-
 :r .\PackageConfig.data.sql	
 :r .\DimDate.data.sql	
