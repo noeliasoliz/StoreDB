@@ -56,4 +56,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="ShipperSK" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="e995e1c3-1fb4-4c14-a0f1-cf6e40c7f9de" ChangeDateTime="05/03/2025 14:44:43">
+    <Property Name="ElementName" Value="[dbo].[DimProduct].[Description]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[DimProduct]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DescriptionCat" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="aa1d4ba4-7358-489e-b79f-d7cc89e2b059" ChangeDateTime="05/03/2025 16:11:22">
+    <Property Name="ElementName" Value="[dbo].[DimDate].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[DimDate]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DateKey" />
+  </Operation>
 </Operations>

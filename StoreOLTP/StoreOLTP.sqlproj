@@ -100,6 +100,10 @@
     <Build Include="dbo\Stored Procedures\CustOrdersOrders.sql" />
     <Build Include="dbo\Stored Procedures\CustOrderHist.sql" />
     <Build Include="dbo\Stored Procedures\SalesByCategory.sql" />
+    <Build Include="dbo\Stored Procedures\GetProductsChangesByRowVersion.sql" />
+    <Build Include="dbo\Stored Procedures\GetCustomerChangesByRowVersion.sql" />
+    <Build Include="dbo\Stored Procedures\GetEmployeeChangesByRowVersion.sql" />
+    <Build Include="dbo\Stored Procedures\GetShippersChangesByRowVersion.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="StoreOLTP.refactorlog" />

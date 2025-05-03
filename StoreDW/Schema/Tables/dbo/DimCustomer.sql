@@ -6,5 +6,6 @@
     [ContactTitle] NVARCHAR(30) NULL, 
     [Address] NVARCHAR(60) NULL, 
     [City] NVARCHAR(15) NULL, 
-    [Region] NVARCHAR(15) NULL
+    [Region] NVARCHAR(15) NULL, 
+    [Country] NVARCHAR(15) NULL
 )

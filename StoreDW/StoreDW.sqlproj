@@ -60,6 +60,7 @@
     <Folder Include="Schema\Tables" />
     <Folder Include="Schema\Tables\dbo" />
     <Folder Include="Schema\Tables\staging" />
+    <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\Tables\dbo\DimProduct.sql" />
@@ -73,8 +74,15 @@
     <Build Include="Schema\Tables\staging\staging.Product.sql" />
     <Build Include="Schema\Tables\staging\staging.Shippers.sql" />
     <Build Include="Schema\Tables\staging.sql" />
+    <Build Include="Schema\Tables\dbo\DimDate.sql" />
+    <Build Include="Scripts\DimDate.Data.sql" />
+    <Build Include="Schema\Tables\staging\staging.Orders.sql" />
+    <Build Include="Scripts\PackageConfig.data.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="StoreDW.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Script.PostDeployment1.sql" />
   </ItemGroup>
 </Project>
