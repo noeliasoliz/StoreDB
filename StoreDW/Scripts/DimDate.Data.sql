@@ -1,6 +1,5 @@
-﻿
-IF NOT EXISTS(SELECT TOP(1) 1
-              FROM [dbo].[DimDate])
+﻿IF NOT EXISTS(SELECT TOP(1) 1
+              FROM dbo.DimDate)
  BEGIN
 	BEGIN TRAN 
 		DECLARE @startdate DATE = '1996-01-01',

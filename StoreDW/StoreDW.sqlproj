@@ -22,6 +22,7 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -45,6 +46,7 @@
     <DefineTrace>true</DefineTrace>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TreatTSqlWarningsAsErrors>False</TreatTSqlWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
@@ -75,14 +77,16 @@
     <Build Include="Schema\Tables\staging\staging.Shippers.sql" />
     <Build Include="Schema\Tables\staging.sql" />
     <Build Include="Schema\Tables\dbo\DimDate.sql" />
-    <Build Include="Scripts\DimDate.Data.sql" />
     <Build Include="Schema\Tables\staging\staging.Orders.sql" />
-    <Build Include="Scripts\PackageConfig.data.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="StoreDW.refactorlog" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Scripts\Script.PostDeployment1.sql" />
+    <None Include="Scripts\DimDate.Data.sql" />
+    <None Include="Scripts\PackageConfig.data.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
   </ItemGroup>
 </Project>

@@ -9,5 +9,5 @@
     [Address] NCHAR(10) NULL, 
     [City] NCHAR(10) NULL, 
     [Region] NCHAR(10) NULL, 
-    [TerritoryDescription] NCHAR(50) NULL
 )
+
