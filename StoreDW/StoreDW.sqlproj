@@ -82,6 +82,11 @@
     <Build Include="Schema\Programmability\GetLastPackageRowVersion.sql" />
     <Build Include="Schema\Programmability\UpdateLastPackageRowVersion.sql" />
     <Build Include="Schema\Tables\dbo\Table1.sql" />
+    <Build Include="Schema\Programmability\DW_MergeDimProduct.sql" />
+    <Build Include="Schema\Programmability\DW_MergeDimCustomer.sql" />
+    <Build Include="Schema\Programmability\DW_MergeDimEmployee.sql" />
+    <Build Include="Schema\Programmability\DW_MergeDimShipper.sql" />
+    <Build Include="Schema\Programmability\DW_MergeFactOrders.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="StoreDW.refactorlog" />
