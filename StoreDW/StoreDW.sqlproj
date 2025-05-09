@@ -63,6 +63,7 @@
     <Folder Include="Schema\Tables\dbo" />
     <Folder Include="Schema\Tables\staging" />
     <Folder Include="Scripts" />
+    <Folder Include="Schema\Programmability" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\Tables\dbo\DimProduct.sql" />
@@ -78,6 +79,8 @@
     <Build Include="Schema\Tables\staging.sql" />
     <Build Include="Schema\Tables\dbo\DimDate.sql" />
     <Build Include="Schema\Tables\staging\staging.Orders.sql" />
+    <Build Include="Schema\Programmability\GetLastPackageRowVersion.sql" />
+    <Build Include="Schema\Programmability\UpdateLastPackageRowVersion.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="StoreDW.refactorlog" />
