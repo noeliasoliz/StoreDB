@@ -81,6 +81,7 @@
     <Build Include="Schema\Tables\staging\staging.Orders.sql" />
     <Build Include="Schema\Programmability\GetLastPackageRowVersion.sql" />
     <Build Include="Schema\Programmability\UpdateLastPackageRowVersion.sql" />
+    <Build Include="Schema\Tables\dbo\Table1.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="StoreDW.refactorlog" />
