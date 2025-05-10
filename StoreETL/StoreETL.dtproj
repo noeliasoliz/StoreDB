@@ -391,7 +391,6 @@
               </SSIS:Properties>
               <SSIS:Parameters />
             </SSIS:PackageMetaData>
-<<<<<<< HEAD
             <SSIS:PackageMetaData SSIS:Name="FactOrders.dtsx">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">{51617D8E-A7E3-4143-B7A4-5174AE4FC2AE}</SSIS:Property>
@@ -402,7 +401,13 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{98DCFAF7-68A2-498A-8F8C-A1CBAAC9D7B4}</SSIS:Property>
-=======
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="DimEmployee.dtsx">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">{BC40DB1D-3AD8-4EE8-96D4-F69CD03DC9B9}</SSIS:Property>
@@ -413,7 +418,6 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{3B708C83-675F-4490-87DB-9CF4E791423C}</SSIS:Property>
->>>>>>> c938b751014c22463dbe9f0466164dbba0f3184c
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
