@@ -11,8 +11,8 @@
   DTS:LocaleID="16394"
   DTS:ObjectName="DimProduct"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{56C61DEE-4359-408B-B78D-3366390FCD06}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{A26DA7F1-B888-489E-A5B6-24D6F17A8B2C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -1073,7 +1073,7 @@ where [refTable].[ProductID] = ?</property>
         <NodeLayout
           Size="164,41.6"
           Id="Package\Add New Products"
-          TopLeft="198.333322496878,282.533331368632" />
+          TopLeft="199.16665578468,281.666664707992" />
         <NodeLayout
           Size="204,41.6"
           Id="Package\Get Database Last Change"
@@ -1083,27 +1083,31 @@ where [refTable].[ProductID] = ?</property>
           Id="Package\Get Last Row Version"
           TopLeft="179.999990165234,118.133332525757" />
         <NodeLayout
-          Size="170.4,41.6"
+          Size="177.6,41.6"
           Id="Package\Initialize staging table"
-          TopLeft="188.333323043254,194.999998643994" />
+          TopLeft="189.166656331056,195.866665304634" />
         <NodeLayout
           Size="137.6,41.6"
           Id="Package\Sync staging"
           TopLeft="204.999988799294,362.26666414751" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Tarea Ejecutar SQL"
+          TopLeft="200.833322360284,435.066663641268" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
           TopLeft="276.73332358963,87.5333330139187">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,30.599999511838"
+              EndConnector="0,30.5999995118383"
               Start="0,0"
-              End="0,23.099999511838">
+              End="0,23.0999995118383">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.099999511838" />
+                    End="0,23.0999995118383" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1114,18 +1118,18 @@ where [refTable].[ProductID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 1]"
-          TopLeft="274.166656604244,159.733332525757">
+          TopLeft="276.383323248145,159.733332525757">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.2666661182378"
+              EndConnector="0,36.1333327788769"
               Start="0,0"
-              End="0,27.7666661182378">
+              End="0,28.6333327788769">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.7666661182378" />
+                    End="0,28.6333327788769" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1136,18 +1140,18 @@ where [refTable].[ProductID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 2]"
-          TopLeft="276.933322770066,236.599998643994">
+          TopLeft="279.566656057868,237.466665304634">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45.9333327246374"
+              EndConnector="0,44.199999403358"
               Start="0,0"
-              End="0,38.4333327246374">
+              End="0,36.699999403358">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.4333327246374" />
+                    End="0,36.699999403358" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1158,18 +1162,18 @@ where [refTable].[ProductID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 3]"
-          TopLeft="277.066655648086,324.133331368632">
+          TopLeft="277.483322291987,323.266664707992">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38.133332778878"
+              EndConnector="0,38.999999439518"
               Start="0,0"
-              End="0,30.633332778878">
+              End="0,31.499999439518">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.633332778878" />
+                    End="0,31.499999439518" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1178,10 +1182,6 @@ where [refTable].[ProductID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Tarea Ejecutar SQL"
-          TopLeft="200.833322360284,435.066663641268" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 4]"
           TopLeft="273.799988799294,403.86666414751">
