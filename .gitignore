@@ -14,7 +14,7 @@ _PublishedWebsites/
 *.vcxproj.filters.user
 *.dbmdl.layout
 *.sqldproj.user
-
+*.jfm
 # Archivos temporales del sistema operativo
 Thumbs.db
 .DS_Store
