@@ -7,6 +7,6 @@
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
       DTS:ConnectRetryInterval="5"
-      DTS:ConnectionString="Data Source=NOELIADUALBIZ2\SQL2022;Initial Catalog=OLTPStore;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-StoreETL-{F8E53A48-76F5-4A5E-B85E-01CDB526AE4C}NOELIADUALBIZ2\SQL2022.OLTPStore;Auto Translate=False;" />
+      DTS:ConnectionString="Data Source=LAPTOP-9TVNPM7B;Initial Catalog=OLTPStore;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-StoreETL-{F8E53A48-76F5-4A5E-B85E-01CDB526AE4C}NOELIADUALBIZ2\SQL2022.OLTPStore;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>
