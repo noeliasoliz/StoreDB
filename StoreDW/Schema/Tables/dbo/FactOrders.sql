@@ -9,5 +9,5 @@
     [UnitPrice] MONEY NULL, 
     [Quantity] SMALLINT NOT NULL, 
     [Discount] REAL NOT NULL, 
-    CONSTRAINT [PK_FactOrders] PRIMARY KEY ([OrderID]) 
+    CONSTRAINT [PK_FactOrders] PRIMARY KEY ([ProductSK], [OrderID]) 
 )

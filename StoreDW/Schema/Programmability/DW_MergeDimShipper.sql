@@ -1,6 +1,4 @@
 ﻿CREATE PROCEDURE [dbo].[DW_MergeDimShipper]
-	@param1 int = 0,
-	@param2 int
 AS
 BEGIN
 	update dc 
