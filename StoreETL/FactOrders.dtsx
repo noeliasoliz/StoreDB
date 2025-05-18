@@ -11,10 +11,36 @@
   DTS:LocaleID="16394"
   DTS:ObjectName="FactOrders"
   DTS:PackageType="5"
-  DTS:VersionBuild="50"
-  DTS:VersionGUID="{DDF2BD19-BCC4-4CE4-8AE2-DFDA330BE2F8}">
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{88A32C42-E030-4650-833A-5928194310C8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[NOELIADUALBIZ2\SQL2022.OLTPStore]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{25A4B90A-4C43-4E4F-8197-56071AB75578}"
+      DTS:ObjectName="NOELIADUALBIZ2\SQL2022.OLTPStore">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=NOELIADUALBIZ2\SQL2022;Initial Catalog=OLTPStore;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-FactOrders-{25A4B90A-4C43-4E4F-8197-56071AB75578}NOELIADUALBIZ2\SQL2022.OLTPStore;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[NOELIADUALBIZ2\SQL2022.storeDW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4322BDAE-25CB-4CF2-BEA9-D1DB9660903F}"
+      DTS:ObjectName="NOELIADUALBIZ2\SQL2022.storeDW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=NOELIADUALBIZ2\SQL2022;Initial Catalog=storeDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-FactOrders-{4322BDAE-25CB-4CF2-BEA9-D1DB9660903F}NOELIADUALBIZ2\SQL2022.storeDW;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -101,8 +127,8 @@
               <connections>
                 <connection
                   refId="Package\Add New Orders\Get Orders.Connections[OleDbConnection]"
-                  connectionManagerID="{F8E53A48-76F5-4A5E-B85E-01CDB526AE4C}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[OrigenNOELIADUALBIZ2_SQL2022.OLTPStore]"
+                  connectionManagerID="{25A4B90A-4C43-4E4F-8197-56071AB75578}:invalid"
+                  connectionManagerRefId="{25A4B90A-4C43-4E4F-8197-56071AB75578}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -362,8 +388,8 @@
               <connections>
                 <connection
                   refId="Package\Add New Orders\Load Orders.Connections[OleDbConnection]"
-                  connectionManagerID="{54AA6CA0-AA32-49A7-87E1-24268CABC762}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DestinoNOELIADUALBIZ2_SQL2022.storeDW]"
+                  connectionManagerID="{4322BDAE-25CB-4CF2-BEA9-D1DB9660903F}:invalid"
+                  connectionManagerRefId="{4322BDAE-25CB-4CF2-BEA9-D1DB9660903F}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -555,8 +581,8 @@
               <connections>
                 <connection
                   refId="Package\Add New Orders\Load staging.Connections[OleDbConnection]"
-                  connectionManagerID="{54AA6CA0-AA32-49A7-87E1-24268CABC762}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DestinoNOELIADUALBIZ2_SQL2022.storeDW]"
+                  connectionManagerID="{4322BDAE-25CB-4CF2-BEA9-D1DB9660903F}:invalid"
+                  connectionManagerRefId="{4322BDAE-25CB-4CF2-BEA9-D1DB9660903F}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -759,8 +785,8 @@ where [refTable].[OrderID] = ? and [refTable].[ProductSK] = ?</property>
               <connections>
                 <connection
                   refId="Package\Add New Orders\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="{54AA6CA0-AA32-49A7-87E1-24268CABC762}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DestinoNOELIADUALBIZ2_SQL2022.storeDW]"
+                  connectionManagerID="{4322BDAE-25CB-4CF2-BEA9-D1DB9660903F}:invalid"
+                  connectionManagerRefId="{4322BDAE-25CB-4CF2-BEA9-D1DB9660903F}:invalid"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -916,8 +942,8 @@ where [refTable].[CustomerID] = ?</property>
               <connections>
                 <connection
                   refId="Package\Add New Orders\Lookup 1.Connections[OleDbConnection]"
-                  connectionManagerID="{54AA6CA0-AA32-49A7-87E1-24268CABC762}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DestinoNOELIADUALBIZ2_SQL2022.storeDW]"
+                  connectionManagerID="{4322BDAE-25CB-4CF2-BEA9-D1DB9660903F}:invalid"
+                  connectionManagerRefId="{4322BDAE-25CB-4CF2-BEA9-D1DB9660903F}:invalid"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1075,8 +1101,8 @@ where [refTable].[EmployeeID] = ?</property>
               <connections>
                 <connection
                   refId="Package\Add New Orders\Lookup Employee.Connections[OleDbConnection]"
-                  connectionManagerID="{54AA6CA0-AA32-49A7-87E1-24268CABC762}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DestinoNOELIADUALBIZ2_SQL2022.storeDW]"
+                  connectionManagerID="{4322BDAE-25CB-4CF2-BEA9-D1DB9660903F}:invalid"
+                  connectionManagerRefId="{4322BDAE-25CB-4CF2-BEA9-D1DB9660903F}:invalid"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1233,8 +1259,8 @@ where [refTable].[ProductID] = ?</property>
               <connections>
                 <connection
                   refId="Package\Add New Orders\Lookup Product.Connections[OleDbConnection]"
-                  connectionManagerID="{54AA6CA0-AA32-49A7-87E1-24268CABC762}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DestinoNOELIADUALBIZ2_SQL2022.storeDW]"
+                  connectionManagerID="{4322BDAE-25CB-4CF2-BEA9-D1DB9660903F}:invalid"
+                  connectionManagerRefId="{4322BDAE-25CB-4CF2-BEA9-D1DB9660903F}:invalid"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1391,8 +1417,8 @@ where [refTable].[ShipperID] = ?</property>
               <connections>
                 <connection
                   refId="Package\Add New Orders\Lookup Shipper.Connections[OleDbConnection]"
-                  connectionManagerID="{54AA6CA0-AA32-49A7-87E1-24268CABC762}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DestinoNOELIADUALBIZ2_SQL2022.storeDW]"
+                  connectionManagerID="{4322BDAE-25CB-4CF2-BEA9-D1DB9660903F}:invalid"
+                  connectionManagerRefId="{4322BDAE-25CB-4CF2-BEA9-D1DB9660903F}:invalid"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1533,7 +1559,7 @@ where [refTable].[ShipperID] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{54AA6CA0-AA32-49A7-87E1-24268CABC762}"
+          SQLTask:Connection="{4322BDAE-25CB-4CF2-BEA9-D1DB9660903F}"
           SQLTask:SqlStatementSource="EXECUTE [dbo].[GetLastPackageRowVersion] @tableName = 'Orders'"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -1555,7 +1581,7 @@ where [refTable].[ShipperID] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{F8E53A48-76F5-4A5E-B85E-01CDB526AE4C}"
+          SQLTask:Connection="{25A4B90A-4C43-4E4F-8197-56071AB75578}"
           SQLTask:SqlStatementSource="EXECUTE [dbo].[GetDatabaseRowVersion] "
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -1577,7 +1603,7 @@ where [refTable].[ShipperID] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{54AA6CA0-AA32-49A7-87E1-24268CABC762}"
+          SQLTask:Connection="{4322BDAE-25CB-4CF2-BEA9-D1DB9660903F}"
           SQLTask:SqlStatementSource="truncate table staging.orders" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1594,7 +1620,7 @@ where [refTable].[ShipperID] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{54AA6CA0-AA32-49A7-87E1-24268CABC762}"
+          SQLTask:Connection="{4322BDAE-25CB-4CF2-BEA9-D1DB9660903F}"
           SQLTask:SqlStatementSource="EXECUTE [dbo].[DW_MergeFactOrders]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1611,7 +1637,7 @@ where [refTable].[ShipperID] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{54AA6CA0-AA32-49A7-87E1-24268CABC762}"
+          SQLTask:Connection="{4322BDAE-25CB-4CF2-BEA9-D1DB9660903F}"
           SQLTask:SqlStatementSource="EXECUTE [dbo].[UpdateLastPackageRowVersion] @tableName = 'Orders' ,@lastRowVersion = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="@endrow"
@@ -1678,27 +1704,27 @@ where [refTable].[ShipperID] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="155,42"
+          Size="155.2,41.6"
           Id="Package\Add New Orders"
           TopLeft="364.99998005728,225.333331766394" />
         <NodeLayout
-          Size="179,42"
+          Size="179.2,41.6"
           Id="Package\Gest LastRowVersion"
           TopLeft="344.16664786223,87.5333327246375" />
         <NodeLayout
-          Size="204,42"
+          Size="204,41.6"
           Id="Package\Get Database Last Change"
           TopLeft="332.499981833002,18.1999998734395" />
         <NodeLayout
-          Size="178,42"
+          Size="177.6,41.6"
           Id="Package\Initialize staging table"
           TopLeft="342.499981286626,155.133332254556" />
         <NodeLayout
-          Size="138,42"
+          Size="137.6,41.6"
           Id="Package\Sync staging"
           TopLeft="369.16664649629,298.133331260151" />
         <NodeLayout
-          Size="190,42"
+          Size="190.4,41.6"
           Id="Package\Update LastRowVersion"
           TopLeft="349.999980876844,377.266664093269" />
         <EdgeLayout
@@ -2176,6 +2202,29 @@ where [refTable].[ShipperID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Add New Orders\Lookup 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimCustomer]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Add New Orders\Lookup Product">
     <Properties>
       <Property>
@@ -2201,29 +2250,6 @@ where [refTable].[ShipperID] = ?</property>
   <PipelineComponentMetadata
     design-time-name="Package\Add New Orders\Get Orders">
     <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Add New Orders\Lookup 1">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimCustomer]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
