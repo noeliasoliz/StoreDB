@@ -1,0 +1,536 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1600,
+  "model": {
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "SQL/NOELIADUALBIZ2\\SQL2022;storeDW",
+        "connectionDetails": {
+          "protocol": "tds",
+          "address": {
+            "server": "NOELIADUALBIZ2\\SQL2022",
+            "database": "storeDW"
+          },
+          "authentication": null,
+          "query": null
+        },
+        "credential": {
+          "AuthenticationKind": "UsernamePassword",
+          "kind": "SQL",
+          "path": "noeliadualbiz2\\sql2022;storeDW",
+          "Username": "sa",
+          "EncryptConnection": false
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "Customer",
+        "columns": [
+          {
+            "name": "CustomerSK",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CustomerSK"
+          },
+          {
+            "name": "CustomerID",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "CustomerID"
+          },
+          {
+            "name": "ContactName",
+            "dataType": "string",
+            "sourceColumn": "ContactName"
+          },
+          {
+            "name": "ContactTitle",
+            "dataType": "string",
+            "sourceColumn": "ContactTitle"
+          },
+          {
+            "name": "Address",
+            "dataType": "string",
+            "sourceColumn": "Address"
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "sourceColumn": "City"
+          },
+          {
+            "name": "Region",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Region"
+          },
+          {
+            "name": "Country",
+            "dataType": "string",
+            "sourceColumn": "Country"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/NOELIADUALBIZ2\\SQL2022;storeDW\",",
+                "    dbo_DimCustomer = Source{[Schema=\"dbo\",Item=\"DimCustomer\"]}[Data]",
+                "in",
+                "    dbo_DimCustomer"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Date",
+        "columns": [
+          {
+            "name": "DateKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "DateKey"
+          },
+          {
+            "name": "FullDate",
+            "dataType": "dateTime",
+            "sourceColumn": "FullDate"
+          },
+          {
+            "name": "DayNumberOfWeek",
+            "dataType": "int64",
+            "sourceColumn": "DayNumberOfWeek"
+          },
+          {
+            "name": "DayNameOfWeek",
+            "dataType": "string",
+            "sourceColumn": "DayNameOfWeek"
+          },
+          {
+            "name": "DayNumberOfMonth",
+            "dataType": "int64",
+            "sourceColumn": "DayNumberOfMonth"
+          },
+          {
+            "name": "DayNumberOfYear",
+            "dataType": "int64",
+            "sourceColumn": "DayNumberOfYear"
+          },
+          {
+            "name": "WeekNumberOfYear",
+            "dataType": "int64",
+            "sourceColumn": "WeekNumberOfYear"
+          },
+          {
+            "name": "MonthName",
+            "dataType": "string",
+            "sourceColumn": "MonthName"
+          },
+          {
+            "name": "MonthNumberOfYear",
+            "dataType": "int64",
+            "sourceColumn": "MonthNumberOfYear"
+          },
+          {
+            "name": "CalendarQuarter",
+            "dataType": "int64",
+            "sourceColumn": "CalendarQuarter"
+          },
+          {
+            "name": "CalendarYear",
+            "dataType": "int64",
+            "sourceColumn": "CalendarYear"
+          },
+          {
+            "name": "CalendarSemester",
+            "dataType": "int64",
+            "sourceColumn": "CalendarSemester"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/NOELIADUALBIZ2\\SQL2022;storeDW\",",
+                "    dbo_DimDate = Source{[Schema=\"dbo\",Item=\"DimDate\"]}[Data]",
+                "in",
+                "    dbo_DimDate"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Employee",
+        "columns": [
+          {
+            "name": "EmployeeSK",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "EmployeeSK"
+          },
+          {
+            "name": "EmployeeID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "EmployeeID"
+          },
+          {
+            "name": "LastName",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "LastName"
+          },
+          {
+            "name": "FirstName",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "FirstName"
+          },
+          {
+            "name": "Title",
+            "dataType": "string",
+            "sourceColumn": "Title"
+          },
+          {
+            "name": "TitleOfCourtesy",
+            "dataType": "string",
+            "sourceColumn": "TitleOfCourtesy"
+          },
+          {
+            "name": "Address",
+            "dataType": "string",
+            "sourceColumn": "Address"
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "sourceColumn": "City"
+          },
+          {
+            "name": "Region",
+            "dataType": "string",
+            "sourceColumn": "Region"
+          },
+          {
+            "type": "calculated",
+            "name": "EmployeeName",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "CONCATENATE(CONCATENATE(Employee[LastName], \" \"),Employee[FirstName])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/NOELIADUALBIZ2\\SQL2022;storeDW\",",
+                "    dbo_DimEmployee = Source{[Schema=\"dbo\",Item=\"DimEmployee\"]}[Data]",
+                "in",
+                "    dbo_DimEmployee"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Product",
+        "columns": [
+          {
+            "name": "ProductSK",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ProductSK"
+          },
+          {
+            "name": "ProductID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ProductID"
+          },
+          {
+            "name": "ProductName",
+            "dataType": "string",
+            "sourceColumn": "ProductName"
+          },
+          {
+            "name": "UnitPrice",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPrice"
+          },
+          {
+            "name": "Discontinued",
+            "dataType": "boolean",
+            "sourceColumn": "Discontinued"
+          },
+          {
+            "name": "CategoryName",
+            "dataType": "string",
+            "sourceColumn": "CategoryName"
+          },
+          {
+            "name": "DescriptionCat",
+            "dataType": "string",
+            "sourceColumn": "DescriptionCat"
+          },
+          {
+            "name": "CompanyNameSup",
+            "dataType": "string",
+            "sourceColumn": "CompanyNameSup"
+          },
+          {
+            "name": "ContactNameSup",
+            "dataType": "string",
+            "sourceColumn": "ContactNameSup"
+          },
+          {
+            "name": "ContactTitleSup",
+            "dataType": "string",
+            "sourceColumn": "ContactTitleSup"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/NOELIADUALBIZ2\\SQL2022;storeDW\",",
+                "    dbo_DimProduct = Source{[Schema=\"dbo\",Item=\"DimProduct\"]}[Data]",
+                "in",
+                "    dbo_DimProduct"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Orders",
+        "columns": [
+          {
+            "name": "OrderID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "OrderID"
+          },
+          {
+            "name": "OrderDateKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "OrderDateKey"
+          },
+          {
+            "name": "CustomerSK",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CustomerSK"
+          },
+          {
+            "name": "EmployeeSK",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "EmployeeSK"
+          },
+          {
+            "name": "ShipViaSK",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ShipViaSK"
+          },
+          {
+            "name": "ProductSK",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ProductSK"
+          },
+          {
+            "name": "UnitPrice",
+            "dataType": "decimal",
+            "isHidden": true,
+            "sourceColumn": "UnitPrice"
+          },
+          {
+            "name": "Quantity",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Quantity"
+          },
+          {
+            "name": "Discount",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "Discount"
+          },
+          {
+            "type": "calculated",
+            "name": "GrossSales",
+            "dataType": "decimal",
+            "isDataTypeInferred": true,
+            "expression": "Orders[UnitPrice] * Orders[Quantity]",
+            "formatString": "\"Bs\"#,0.00;-\"Bs\"#,0.00;\"Bs\"#,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"16394\" DisplayName=\"Bs Español (Bolivia)\" Symbol=\"Bs\" PositivePattern=\"0\" NegativePattern=\"1\" /></Format>"
+              }
+            ]
+          },
+          {
+            "type": "calculated",
+            "name": "NetSales",
+            "dataType": "decimal",
+            "isDataTypeInferred": true,
+            "expression": " Orders[GrossSales] - (Orders[GrossSales] * Orders[Discount])",
+            "formatString": "\"Bs\"#,0.00;-\"Bs\"#,0.00;\"Bs\"#,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"16394\" DisplayName=\"Bs Español (Bolivia)\" Symbol=\"Bs\" PositivePattern=\"0\" NegativePattern=\"1\" /></Format>"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/NOELIADUALBIZ2\\SQL2022;storeDW\",",
+                "    dbo_FactOrders = Source{[Schema=\"dbo\",Item=\"FactOrders\"]}[Data]",
+                "in",
+                "    dbo_FactOrders"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "TotalQuantity",
+            "expression": " SUM(Orders[Quantity])"
+          },
+          {
+            "name": "TotalGrossSales",
+            "expression": " SUM(Orders[GrossSales])"
+          },
+          {
+            "name": "TotalNetSales",
+            "expression": " SUM(Orders[NetSales])"
+          },
+          {
+            "name": "TotalOrders",
+            "expression": " DISTINCTCOUNT(Orders[OrderID])"
+          }
+        ]
+      },
+      {
+        "name": "Shippers",
+        "columns": [
+          {
+            "name": "ShipperSK",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ShipperSK"
+          },
+          {
+            "name": "ShipperID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ShipperID"
+          },
+          {
+            "name": "CompanyName",
+            "dataType": "string",
+            "sourceColumn": "CompanyName"
+          },
+          {
+            "name": "Phone",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Phone"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/NOELIADUALBIZ2\\SQL2022;storeDW\",",
+                "    dbo_DimShippers = Source{[Schema=\"dbo\",Item=\"DimShippers\"]}[Data]",
+                "in",
+                "    dbo_DimShippers"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "453680f8-74fb-4909-a864-2c2bcc3dbe9d",
+        "fromTable": "Orders",
+        "fromColumn": "CustomerSK",
+        "toTable": "Customer",
+        "toColumn": "CustomerSK"
+      },
+      {
+        "name": "446f8951-a2b1-463e-be92-125ccdbd1e1e",
+        "fromTable": "Orders",
+        "fromColumn": "OrderDateKey",
+        "toTable": "Date",
+        "toColumn": "DateKey"
+      },
+      {
+        "name": "b4c299ff-237d-4944-8f1c-8d39d031e718",
+        "fromTable": "Orders",
+        "fromColumn": "EmployeeSK",
+        "toTable": "Employee",
+        "toColumn": "EmployeeSK"
+      },
+      {
+        "name": "67bbf2c2-4b79-4ef8-8f2d-7cbe765a07c9",
+        "fromTable": "Orders",
+        "fromColumn": "ProductSK",
+        "toTable": "Product",
+        "toColumn": "ProductSK"
+      },
+      {
+        "name": "cad81fd7-9a92-49be-8643-267484674d5d",
+        "fromTable": "Orders",
+        "fromColumn": "ShipViaSK",
+        "toTable": "Shippers",
+        "toColumn": "ShipperSK"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "700"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}
