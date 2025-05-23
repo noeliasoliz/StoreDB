@@ -132,7 +132,8 @@
           {
             "name": "MonthName",
             "dataType": "string",
-            "sourceColumn": "MonthName"
+            "sourceColumn": "MonthName",
+            "sortByColumn": "MonthNumberOfYear"
           },
           {
             "name": "MonthNumberOfYear",
@@ -523,6 +524,46 @@
         "fromColumn": "ShipViaSK",
         "toTable": "Shippers",
         "toColumn": "ShipperSK"
+      }
+    ],
+    "perspectives": [
+      {
+        "name": "Sales",
+        "tables": [
+          {
+            "name": "Customer",
+            "columns": [
+              {
+                "name": "ContactName"
+              }
+            ]
+          },
+          {
+            "name": "Date",
+            "columns": [
+              {
+                "name": "CalendarYear"
+              },
+              {
+                "name": "MonthName"
+              }
+            ]
+          },
+          {
+            "name": "Orders",
+            "measures": [
+              {
+                "name": "TotalNetSales"
+              },
+              {
+                "name": "TotalOrders"
+              },
+              {
+                "name": "TotalQuantity"
+              }
+            ]
+          }
+        ]
       }
     ],
     "annotations": [
